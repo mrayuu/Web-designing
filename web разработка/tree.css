@@ -1,0 +1,377 @@
+h1 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-weight: 300;
+	color: #FFFFF0;
+}
+#wrapper {
+	background: #FFF;
+	margin: 0px 20px;
+}
+#header-wrapper
+{
+	background: url(https://wallbox.ru/wallpapers/main/201121/0eb56b45fdfa6535cf1d0f1740cd0af0.jpg) no-repeat center center;
+	background-size: cover;
+	height = 1000px;
+	width = 2000px;
+}
+
+#header {
+	position: relative;
+	overflow: hidden;
+	height: 600px;
+}
+#logo h1 {
+	letter-spacing: -1px;
+	font-size: 2.5em;
+	color: #FFFFF0;
+}
+.container {
+	width: 2000px;
+	margin: 0px auto;
+	align-items: stretch;
+}
+
+#menu {
+	overflow: hidden;
+	background: #191970;
+	width: 100%;
+
+
+}
+
+#menu ul {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	display: inline-block;
+}
+
+#menu a {
+	display: block;
+	padding: 0px 40px 0px 40px;
+	line-height: 70px;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 200;
+	color: #FFFFF0;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	text-decoration: none;
+	color: #FFFFF0;
+}
+
+#menu .current_page_item a {
+}
+
+#menu .last {
+	border-right: none;
+}
+#footer {
+	overflow: hidden;
+	padding: 50px 0px 30px 0px;
+}
+
+#footer p {
+	text-align: center;
+		color: rgba(0,0,0,0.7);
+}
+
+#portfolio-wrapper
+	{
+		overflow: hidden;
+		padding: 5em 0em;
+		background: rgba(0,0,0,.02);
+
+		background-repeat: repeat;
+		border-top: 1px solid rgba(0,0,0,.05);
+	}
+
+
+#portfolio .box
+	{
+		color: rgba(0,0,0,0.5);
+	}
+
+#portfolio h3
+	{
+		display: block;
+		padding-bottom: 1em;
+		text-transform: uppercase;
+		font-size: 1.2em;
+		font-weight: 400;
+		color: rgba(0,0,0,0.7);
+	}
+
+	#portfolio .title h2
+	{
+		color: rgba(0,0,0,0.8);
+	}
+	#portfolio p
+	{
+		font-size: 1em;
+	}
+
+	#portfolio .title .byline
+	{
+		display: block;
+		padding-bottom: 2em;
+		color: rgba(0,0,0,0.7);
+	}
+
+	.column1,
+	.column2,
+	.column3,
+
+	{
+		width: 282px;
+		justify-items: center;
+	}
+
+	.column1,
+	.column2,
+	.column3
+	{
+		float: left;
+		margin-right: 24px;
+		justify-items: center;
+	}
+.button
+	{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 0em 1em;
+		background: #161616;
+		letter-spacing: 0.10em;
+		line-height: 3em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1em;
+		color: #FFF;
+	}
+
+
+
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 700px;
+   background-image: url('https://s01.yapfiles.ru/files/1990311/polenebogorizontpeyzazh.jpg');
+}
+.trunk,
+.branch {
+  border-radius: 25px;
+  background: linear-gradient(to right, #3c2120, #4d2020);
+}
+.trunk {
+  position: relative;
+  left: -650px;
+  width: 13px;
+  height: 500px;
+  margin: 0 auto;
+}
+@keyframes sunrise {
+  0% {
+    box-shadow: none;
+  }
+}
+
+.sun {
+  top: -250px;
+  left: -550px;
+  position: relative;
+  margin: 50px auto;
+  width: 100px;
+  height: 100px;
+  background-color: #FFDE00;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px #FFDE0080;
+  animation:
+    sunrise 2s infinite linear forwards,
+    rays 2s 2s infinite linear;
+}
+
+.branch:nth-child(even) {
+  transform: rotate(60deg);
+}
+
+.branch:nth-child(odd) {
+  transform: rotate(-60deg);
+}
+.branch {
+  position: absolute;
+
+  width: 8px;
+
+  transform-origin: bottom center;
+}
+.branch:nth-child(1) {
+  top: 200px;
+
+  height: 200px;
+}
+.branch:nth-child(2) {
+  top: 180px;
+
+  height: 180px;
+}
+
+.branch:nth-child(3) {
+  top: 160px;
+
+  height: 150px;
+}
+
+.branch:nth-child(4) {
+  top: 120px;
+
+  height: 150px;
+}
+
+.branch:nth-child(5) {
+  top: 100px;
+
+  height: 130px;
+}
+.branch:nth-child(6) {
+  top: 60px;
+
+  height: 120px;
+}
+.branch:nth-child(7) {
+  top: 40px;
+
+  height: 110px;
+}
+.branch:nth-child(8) {
+  top: 20px;
+
+  height: 90px;
+}
+.branch:nth-child(9) {
+  top: 10px;
+
+  height: 70px;
+}
+
+.leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 75% 0 75% 0;
+  background: linear-gradient(to right, #006400, #3CB371);
+}
+
+@keyframes leaf-odd-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.leaf:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: leaf-odd-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+@keyframes leaf-even-grow {
+  0% {
+    transform: rotate(-90deg) scale(0);
+  }
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+}
+.leaf:nth-child(even) {
+  left: -150%;
+  transform-origin: 50% 100%;
+  animation-name: leaf-even-grow;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+.leaf:nth-child(1) {
+  top: 5px;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(2) {
+  top: 20px;
+  animation-delay: 3s;
+}
+.leaf:nth-child(3) {
+  top: 45px;
+  animation-delay: 2.5s;
+}
+.leaf:nth-child(4) {
+  top: 65px;
+  animation-delay: 2s;
+}
+.leaf:nth-child(5) {
+  top: 90px;
+  animation-delay: 1.5s;
+}
+.leaf:nth-child(6) {
+  top: 120px;
+  animation-delay: 1s;
+}
+.leaf:nth-child(7) {
+  top: 140px;
+  animation-delay: 0.5s;
+}
+.berry{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50% 50% 50% 50%;
+  background: linear-gradient(to right, #4B0082, #8B008B);
+}
+@keyframes berry-odd-grow {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+.berry:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: berry-odd-grow;
+  animation-duration: 6s;
+  animation-fill-mode: both
+  animation-delay: 12.5s;
+  top: 28px;
+}
+
+@keyframes berry-even-grow {
+  0% {
+    transform: rotate(-90deg) scale(0);
+  }
+  50% {
+    transform: rotate(-90deg) scale(1);
+  }
+}
+.berry:nth-child(even) {
+  left: -100%;
+  transform-origin: 50% 100%;
+  animation-name: berry-even-grow;
+  animation-duration: 6s;
+  animation-fill-mode: both;
+
+  top: 47px;
+}
