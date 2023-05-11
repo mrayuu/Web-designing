@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Загадка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Загадка:</h1>
+        <h4 class="text-center">Две спины, одна голова, шесть ног. Что это?</h4>
+        <div class="form-group mx-auto w-50 mt-5">
+            <label for="answer">Ответ:</label>
+            <input type="text" class="form-control" id="answer">
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="checkAnswer()">Отправить ответ</button>
+        </div>
+        <div class="text-center mt-5">
+            <p id="result"></p>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function checkAnswer() {
+            // Получаем значение ответа из поля ввода
+            var answer = document.getElementById("answer").value;
+            // Сравниваем с правильным ответом
+            if (answer == "человек на стуле") {
+                // Если ответ верный, выводим сообщение
+                document.getElementById("result").innerHTML = "Это верно!";
+            } else {
+                // Если ответ неверный, выводим сообщение
+                document.getElementById("result").innerHTML = "Нет(";
+            }
+        }
+    </script>
+
+</body>
+</html>
