@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Замена отрицательных элементов квадратами</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    h1 {
+      color: #800080;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #800080;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .result-container {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h1>Задача 2</h1><br>
+    <h2>Замена отрицательных элементов квадратами</h2>
+    <div class="result-container">
+      <p>Исходный массив: <span id="original-array"></span></p>
+      <p>Массив после замены: <span id="modified-array"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // Функция для генерации случайного числа в заданном интервале
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Создаем массив из n случайных чисел
+    var n = 30;
+    var numbers = [];
+    for (var i = 0; i < n; i++) {
+      numbers.push(getRandomNumber(-10, 30));
+    }
+
+    // Заменяем отрицательные элементы их квадратами
+    var modifiedNumbers = numbers.map(function(element) {
+      if (element < 0) {
+        return Math.pow(element, 2);
+      } else {
+        return element;
+      }
+    });
+
+    // Выводим результаты на страницу
+    var originalArrayElement = document.getElementById('original-array');
+    originalArrayElement.textContent = numbers.join(', ');
+
+    var modifiedArrayElement = document.getElementById('modified-array');
+    modifiedArrayElement.textContent = modifiedNumbers.join(', ');
+  </script>
+</body>
+</html>

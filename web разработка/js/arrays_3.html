@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Статистика чисел в массиве</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    h1 {
+      color: #FFB6C1;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+     h2 {
+      color: #FFB6C1;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .result-container {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+       <h1>Задача 3</h1><br>
+    <h2>Обзор массива</h2>
+    <div class="result-container">
+      <p>Массив: <span id="array"></span></p>
+      <p>Среднее арифметическое положительных чисел: <span id="positive-average"></span></p>
+      <p>Среднее арифметическое отрицательных чисел: <span id="negative-average"></span></p>
+      <p>Количество нулей: <span id="zero-count"></span></p>
+    </div>
+
+
+  <script>
+    // Функция для генерации случайного числа в заданном интервале
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Создаем массив из n случайных чисел
+    var n = 20;
+    var numbers = [];
+    for (var i = 0; i < n; i++) {
+      numbers.push(getRandomNumber(-10, 10));
+    }
+
+    // Находим среднее арифметическое положительных чисел, отрицательных чисел и количество нулей
+    var positiveSum = 0;
+    var positiveCount = 0;
+    var negativeSum = 0;
+    var negativeCount = 0;
+    var zeroCount = 0;
+
+    for (var i = 0; i < numbers.length; i++) {
+      if (numbers[i] > 0) {
+        positiveSum += numbers[i];
+        positiveCount++;
+      } else if (numbers[i] < 0) {
+        negativeSum += numbers[i];
+        negativeCount++;
+      } else {
+        zeroCount++;
+      }
+    }
+
+    var positiveAverage = positiveCount > 0 ? positiveSum / positiveCount : 0;
+    var negativeAverage = negativeCount > 0 ? negativeSum / negativeCount : 0;
+
+    // Выводим результаты на страницу
+    var arrayElement = document.getElementById('array');
+    arrayElement.textContent = numbers.join(', ');
+
+    var positiveAverageElement = document.getElementById('positive-average');
+    positiveAverageElement.textContent = positiveAverage.toFixed(2);
+
+    var negativeAverageElement = document.getElementById('negative-average');
+    negativeAverageElement.textContent = negativeAverage.toFixed(2);
+
+    var zeroCountElement = document.getElementById('zero-count');
+    zeroCountElement.textContent = zeroCount;
+  </script>
+</body>
+</html>
