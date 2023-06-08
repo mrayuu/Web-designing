@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Форма регистрации</title>
+    <!-- Подключение Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Регистрация</h1>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" class="form-control" id="username" required>
+                <div class="error-message" id="usernameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта:</label>
+                <input type="email" class="form-control" id="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" class="form-control" id="password" required>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="form-group">
+                <label for="passwordConfirm">Подтверждение пароля:</label>
+                <input type="password" class="form-control" id="passwordConfirm" required>
+                <div class="error-message" id="passwordConfirmError"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            <button type="reset" class="btn btn-secondary">Сбросить</button>
+        </form>
+    </div>
+
+    <!-- Подключение скрипта -->
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Предотвращаем отправку формы
+
+            // Получаем значения полей
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var passwordConfirm = document.getElementById("passwordConfirm").value;
+
+            // Очищаем сообщения об ошибках
+            document.getElementById("usernameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("passwordError").innerHTML = "";
+            document.getElementById("passwordConfirmError").innerHTML = "";
+
+            // Проверка имени пользователя
+            if (username.length < 3) {
+                document.getElementById("usernameError").innerHTML = "Имя пользователя должно содержать не менее 3 символов";
+            }
+
+            // Проверка электронной почты
+            if (!email.includes("@")) {
+                document.getElementById("emailError").innerHTML = "Введите правильный адрес электронной почты";
+            }
+
+            // Проверка пароля
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerHTML = "Пароль должен содержать не менее 6 символов";
+            }
+
+            // Проверка подтверждения пароля
+            if (password !== passwordConfirm) {
+                document.getElementById("passwordConfirmError").innerHTML = "Пароли не совпадают";
+            }
+
+            // Если все проверки пройдены, можно выполнить регистрацию
+            if (username.length >= 3 && email.includes("@") && password.length >= 6 && password === passwordConfirm) {
+                alert("Вас зарегистрировали\nID=" + username + "\nEmail=" + email + "\nPassword=" + password);
+                // Здесь можно добавить код для отправки данных на сервер или выполнения других действий
+                // ...
+                // Перенаправление на другую страницу
+                window.location.href = "https://www.example.com/";
+            }
+        });
+    </script>
+</body>
+</html>
