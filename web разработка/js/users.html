@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильтрация пользователей по времени</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mt-4">Фильтрация пользователей по времени</h1>
+    <div id="users-list" class="mt-5"></div>
+</div>
+
+<script>
+    // Загрузка данных из JSON-файла
+    fetch('https://64476ba650c2533744245158.mockapi.io/re/users')
+        .then(response => response.json())
+        .then(users => {
+            // Функция для фильтрации пользователей по времени
+            const filterUsersByTime = (users, filterTime) => {
+                return users.filter(user => {
+                    const userTime = new Date(user.date * 1000).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+                    return userTime > filterTime;
+                });
+            };
+
+            // Определенное время для фильтрации (измените на нужное вам время)
+            const filterTime = '08:40';
+
+            // Фильтрация пользователей по времени
+            const filteredUsers = filterUsersByTime(users, filterTime);
+
+            // Формирование HTML-разметки для вывода пользователей
+            const usersListElement = document.getElementById('users-list');
+            let usersHTML = '';
+            filteredUsers.forEach(user => {
+                usersHTML += `
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="${user.avatar}" class="card-img" alt="Avatar">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">ID: ${user.id}</h5>
+                                    <p class="card-text">Name: ${user.name}</p>
+                                    <p class="card-text">Date: ${new Date(user.date * 1000).toLocaleString()}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Вывод пользователей на страницу
+            usersListElement.innerHTML = usersHTML;
+        })
+        .catch(error => {
+            console.error('Ошибка при загрузке данных:', error);
+        });
+</script>
+
+</body>
+</html>
